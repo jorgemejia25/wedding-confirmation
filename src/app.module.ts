@@ -22,6 +22,9 @@ import { TypeOrmModule } from "@nestjs/typeorm";
         database: configService.get("DATABASE_NAME"),
         entities: [Invitacion],
         synchronize: true,
+        ssl: {
+          rejectUnauthorized: false,
+        },
       }),
       inject: [ConfigService],
     }),
